@@ -99,7 +99,7 @@ class Steve:
         self.gamma = gamma
         self.tau = tau
 
-        self.device = torch.device("mps" if torch.cuda.is_available() else "cpu")
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
         self.model = DDQN(3, self.action_space)
         self.target_model = DDQN(3, self.action_space)
